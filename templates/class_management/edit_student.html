@@ -1,0 +1,16 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}Изменить данные ученика{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+
+        <h1>Изменить данные ученика</h1>
+        <form action="" enctype='multipart/form-data' method="POST">{% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-primary" type="submit" value="Изменить"/>
+        </form>
+    </div>
+{% endblock %}
+
+

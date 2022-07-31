@@ -1,0 +1,35 @@
+{% extends '../base.html' %}
+{% block title %}Поиск учеников{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1>Результаты поиска: </h1>
+        <div class="row">
+            {% for student in student_list %}
+                <div class="col-md-4">
+                    <div class="card mb- shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Имя: {{ student.full_name }}</h4>
+                            <p class="card-text">Эл.почта: {{ student.email }} </p>
+                            <p class="card-text">Дата Рождения: {{ student.birth_date }} </p>
+                            {#                            <p class="card-text">Класс: {{ student.classroom }} </p>#}
+                            <p class="card-text">Класс: {{ student.class_name }} </p>
+                            <p class="card-text">Пол: {{ student.get_gender_display }} </p>
+
+                            {% if user.is_authenticated %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="{% url 'edit_student' student.pk %}"
+                                           class="btn btn-primary">Изменить</a>
+
+                                        <a href="{% url 'delete_student' student.pk %}"
+                                           class="btn btn-danger">Удалить</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
