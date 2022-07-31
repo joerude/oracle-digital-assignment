@@ -4,9 +4,8 @@
 - [Модели](#модели)
 - [Требования](#требования)
 - [Запуск и реализация](#запуск-и-реализация)
-- [1. Docker](#docker)
-- [2. Локально](#локально)
-- [Структура](#)
+- [1. Docker](#1-docker)
+- [2. Локально](#2-локально)
 
 ## Тестовое задание от компании Oracle Digital
 
@@ -86,7 +85,11 @@ git clone https://github.com/joerude/oracle-digital-test
 cd oracle-digital-test 
 ```
 
-#### Docker
+Далее, чтобы запустить приложение есть два варианта:
+1. С помощью Docker
+2. Локально
+
+#### 1. Docker
 
 Оба компонента системы (проект Django и база данных)
 развертываются в отдельных контейнерах Docker. Настройки компонентов указываются в
@@ -97,17 +100,20 @@ cd oracle-digital-test
 docker-compose up
 ```
 
-#### Локально
+После установку необходимых образов перейдите по адресу
+http://0.0.0.0:8000/ или http://127.0.0.1:8000/
+
+#### 2. Локально
 
 Скачайте виртуальное окружение и установите необходимые зависимости:
 
 ```shell
-python3 -m venv env  # устанвока виртуального окружения
-source env/bin/activate  # активация виртуального окружения 
-pip install -r requirements.txt  # установка необходимых зависимостей
-python3 manage.py migrate # миграция данных
-python3 manage.py loaddata db.json  # установите готовую базу
-python3 manage.py runserver  # запуск сервера
+python3 -m venv env                    # устанвока виртуального окружения
+source env/bin/activate                # активация виртуального окружения 
+pip install -r requirements.txt        # установка необходимых зависимостей
+python3 manage.py migrate              # миграция данных
+python3 manage.py loaddata db.json     # установите готовую базу
+python3 manage.py runserver            # запуск сервера
 ```
 
 Перейдите по адресу
