@@ -20,30 +20,6 @@ class StudentListView(ListView):
     paginate_by = 3
 
 
-class SignUpUser(CreateView):
-    form_class = SignUpForm
-    template_name = "account/signup.html"
-    success_url = reverse_lazy("signin")
-
-    def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        return redirect("index")
-
-
-class SignInUser(LoginView):
-    form_class = SignInForm
-    template_name = "account/signin.html"
-
-    def get_success_url(self):
-        return reverse_lazy("index")
-
-
-def logout_user(request):
-    logout(request)
-    return redirect("signin")
-
-
 class SearchResultListView(ListView):
     model = Student
     template_name = "class_management/search_results.html"

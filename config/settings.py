@@ -24,7 +24,7 @@ INSTALLED_APPS = [
 
     # Local
     'class_management',
-    # 'accounts',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -98,8 +98,7 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AUTH_USER_MODEL = 'accounts.TeacherUser'
-# AUTH_USER_MODEL = 'core.User'
+AUTH_USER_MODEL = 'accounts.MyUser'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

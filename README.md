@@ -60,7 +60,7 @@
 - Код в репозитории на GitHub
 - Понятная документация по установке проекта в файле `README.md`
 - Список всех зависимостей должен храниться в requirements.txt, соответственно можно установить их
-  командой 
+  командой
   ```shell
   pip install -requirements.txt
   ```
@@ -78,16 +78,17 @@
 - Docker
 
 ### Запуск и реализация
+
 Для начала клонируйте репозиторий и перейдите в рабочую директорию:
+
 ```shell 
 git clone https://github.com/joerude/oracle-digital-test
 cd oracle-digital-test 
 ```
 
-
 #### Docker
 
-Оба компонента системы (проект Django и база данных) 
+Оба компонента системы (проект Django и база данных)
 развертываются в отдельных контейнерах Docker. Настройки компонентов указываются в
 [docker-compose.yml](https://github.com/joerude/oracle-digital-test/blob/master/docker-compose.yml).
 Для запуска введите команду:
@@ -97,20 +98,23 @@ docker-compose up
 ```
 
 #### Локально
+
 Скачайте виртуальное окружение и установите необходимые зависимости:
 
 ```shell
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt
-python3 manage.py makemigrations class_management
-python3 manage.py migrate
-python3 manage.py runserver
+python3 -m venv env  # устанвока виртуального окружения
+source env/bin/activate  # активация виртуального окружения 
+pip install -r requirements.txt  # установка необходимых зависимостей
+python3 manage.py migrate # миграция данных
+python3 manage.py loaddata db.json  # установите готовую базу
+python3 manage.py runserver  # запуск сервера
 ```
 
+Перейдите по адресу
+http://0.0.0.0:8000/ или http://127.0.0.1:8000/
 
-В файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env) содержится конфигурации по отправке email с SMTP сервера. При необходимости определите свои параметры 
+_**Для создания, изменения или удаления учеников необходима регистрация-авторизация пользователя (учителя)**_
 
-*Для создания, изменения или удаления учеников необходима регистрация-авторизация пользователя (учителя)*
-
+В файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env)
+содержится конфигурации Django для отправки email писем с SMTP сервера. При необходимости определите свои параметры.
 

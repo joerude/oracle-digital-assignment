@@ -23,12 +23,12 @@
 
 
         {% if user.is_authenticated %}
-            <span class="navbar-text mr-2">{{ user }}</span>
+            <span class="navbar-text mr-2">{{ user.full_name }}</span>
             <a href="{% url 'add_student' %}" class="btn btn-primary mr-2">Добавить ученика</a>
-            <a href="{% url 'signout' %}" class="btn btn-outline-light">Выход</a>
+            <a href="{% url 'accounts:signout' %}" class="btn btn-outline-light">Выход</a>
         {% else %}
-            <a href="{% url 'signin' %}" class="btn btn-outline-light mr-2">Вход</a>
-            <a href="{% url 'signup' %}" class="btn btn-outline-light mr-2">Регистрация</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-light mr-2">Вход</a>
+            <a href="{% url 'accounts:signup' %}" class="btn btn-outline-light mr-2">Регистрация</a>
         {% endif %}
     </div>
 </nav>
