@@ -9,9 +9,6 @@ services:
       - .:/code
     depends_on:
       - db
-    environment:
-      - "DJANGO_SECRET_KEY=top-secret-django"
-      - "DJANGO_DEBUG=True"
 
   db:
     image: postgres:13
