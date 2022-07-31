@@ -89,7 +89,15 @@ cd oracle-digital-test
 1. С помощью Docker
 2. Локально
 
+
+
+Для удобства, при работе с включенным режимом отладки будет использоваться база Sqlite3,
+а иначе — Postgres
+
+
 #### 1. Docker
+Удостоверьтесь, что в файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env) 
+DEBUG=False (выключен режим отладки)
 
 Оба компонента системы (проект Django и база данных)
 развертываются в отдельных контейнерах Docker. Настройки компонентов указываются в
@@ -104,6 +112,9 @@ docker-compose up
 http://0.0.0.0:8000/ или http://127.0.0.1:8000/
 
 #### 2. Локально
+
+Удостоверьтесь, что в файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env) 
+DEBUG=True (включён режим отладки)
 
 Скачайте виртуальное окружение и установите необходимые зависимости:
 
@@ -121,6 +132,13 @@ http://0.0.0.0:8000/ или http://127.0.0.1:8000/
 
 _**Для создания, изменения или удаления учеников необходима регистрация-авторизация пользователя (учителя)**_
 
-В файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env)
-содержится конфигурации Django для отправки email писем с SMTP сервера. При необходимости определите свои параметры.
+В файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env) также
+содержится конфигурация Django для отправки email писем с SMTP сервера. При необходимости определите свои параметры.
+
+
+
+
+Если будут вопросы пишите в телеграм: 
+
+[![](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/joerude)
 
