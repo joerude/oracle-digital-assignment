@@ -1,11 +1,12 @@
 ## Содержание
 
-- [Task](#)
-- [Preparing](#)
-- [Launch](#)
-- [1. Docker](#)
-- [2. Local](#)
-- [Structure](#)
+- [Задание](#задание-школа)
+- [Модели](#модели)
+- [Требования](#требования)
+- [Запуск и реализация](#запуск-и-реализация)
+- [1. Docker](#docker)
+- [2. Локально](#локально)
+- [Структура](#)
 
 ## Тестовое задание от компании Oracle Digital
 
@@ -59,7 +60,10 @@
 - Код в репозитории на GitHub
 - Понятная документация по установке проекта в файле `README.md`
 - Список всех зависимостей должен храниться в requirements.txt, соответственно можно установить их
-  командой `pip install -requirements.txt`
+  командой 
+  ```shell
+  pip install -requirements.txt
+  ```
 - Разработка должны вестись в `virtualenv`, но сама директория с virtualenv должна быть добавлена в `.gitignore`
 - По frontend требований никаких не предъявляется. Интерфейс на ваше усмотрение и он не будет оцениваться
 - После создания ученика отправлять уведомление использовав `django signals`
@@ -72,3 +76,41 @@
 - Postgres
 - Git, Github
 - Docker
+
+### Запуск и реализация
+Для начала клонируйте репозиторий и перейдите в рабочую директорию:
+```shell 
+git clone https://github.com/joerude/oracle-digital-test
+cd oracle-digital-test 
+```
+
+
+#### Docker
+
+Оба компонента системы (проект Django и база данных) 
+развертываются в отдельных контейнерах Docker. Настройки компонентов указываются в
+[docker-compose.yml](https://github.com/joerude/oracle-digital-test/blob/master/docker-compose.yml).
+Для запуска введите команду:
+
+```shell
+docker-compose up
+```
+
+#### Локально
+Скачайте виртуальное окружение и установите необходимые зависимости:
+
+```shell
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+python3 manage.py makemigrations class_management
+python3 manage.py migrate
+python3 manage.py runserver
+```
+
+
+В файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env) содержится конфигурации по отправке email с SMTP сервера. При необходимости определите свои параметры 
+
+*Для создания, изменения или удаления учеников необходима регистрация-авторизация пользователя (учителя)*
+
+
