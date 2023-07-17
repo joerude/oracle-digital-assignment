@@ -81,8 +81,8 @@
 Для начала клонируйте репозиторий и перейдите в рабочую директорию:
 
 ```shell 
-git clone https://github.com/joerude/oracle-digital-test
-cd oracle-digital-test 
+git clone https://github.com/joerude/oracle-digital-assignment
+cd oracle-digital-assignment 
 ```
 
 Далее, чтобы запустить приложение есть два варианта:
@@ -96,12 +96,12 @@ cd oracle-digital-test
 
 
 #### 1. Docker
-Удостоверьтесь, что в файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env) 
+Удостоверьтесь, что в файле [.env](https://github.com/joerude/oracle-digital-assignment/blob/master/.env) 
 DEBUG=False (выключен режим отладки)
 
 Оба компонента системы (проект Django и база данных)
 развертываются в отдельных контейнерах Docker. Настройки компонентов указываются в
-[docker-compose.yml](https://github.com/joerude/oracle-digital-test/blob/master/docker-compose.yml).
+[docker-compose.yml](https://github.com/joerude/oracle-digital-assignment/blob/master/docker-compose.yml).
 Для запуска введите команду:
 
 ```shell
@@ -113,7 +113,7 @@ http://0.0.0.0:8000/ или http://127.0.0.1:8000/
 
 #### 2. Локально
 
-Удостоверьтесь, что в файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env) 
+Удостоверьтесь, что в файле [.env](https://github.com/joerude/oracle-digital-assignment/blob/master/.env) 
 DEBUG=True (включён режим отладки)
 
 Скачайте виртуальное окружение и установите необходимые зависимости:
@@ -132,7 +132,7 @@ http://0.0.0.0:8000/ или http://127.0.0.1:8000/
 
 _**Для создания, изменения или удаления учеников необходима регистрация-авторизация пользователя (учителя)**_
 
-В файле [.env](https://github.com/joerude/oracle-digital-test/blob/master/.env) также
+В файле [.env](https://github.com/joerude/oracle-digital-assignment/blob/master/.env) также
 содержится конфигурация Django для отправки email писем с SMTP сервера. При необходимости определите свои параметры.
 
 
